@@ -1,0 +1,24 @@
+$green-phosphor: #3f3;
+$monitor-background-color: #141414;
+html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: $green-phosphor;
+  text-shadow: 0 0 .2rem rgba($green-phosphor, .8);
+  min-height: 100%;
+
+  background: radial-gradient(ellipse at center, rgba($green-phosphor, 0.1) 0%, rgba(255,255,255,0) 100%);
+  background-color: $monitor-background-color;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

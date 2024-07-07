@@ -1,0 +1,38 @@
+$green-phosphor: #3f3;
+$monitor-background-color: #141414;
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.character-sheet {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 2rem;
+  max-width: 75%;
+
+  input {
+    all: unset;
+    text-align: left;
+    max-width: fit-content;
+    caret-color: transparent;
+  }
+
+  .blinking-block {
+    animation: blink 1s steps(1, end) infinite;
+  }
+
+  .delta-green-display {
+    white-space: pre-wrap;
+    padding-bottom: 1.5rem;
+  }
+}
