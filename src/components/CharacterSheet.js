@@ -122,31 +122,37 @@ function CharacterSheet() {
         <CharacterStatistic
           number={charStr}
           statName="STR"
+          availablePoints={availablePoints()}
           setStat={setCharStr}
         />
         <CharacterStatistic
           number={charCon}
           statName="CON"
+          availablePoints={availablePoints()}
           setStat={setCharCon}
         />
         <CharacterStatistic
           number={charDex}
           statName="DEX"
+          availablePoints={availablePoints()}
           setStat={setCharDex}
         />
         <CharacterStatistic
           number={charInt}
           statName="INT"
+          availablePoints={availablePoints()}
           setStat={setCharInt}
         />
         <CharacterStatistic
           number={charPow}
           statName="POW"
+          availablePoints={availablePoints()}
           setStat={setCharPow}
         />
         <CharacterStatistic
           number={charCha}
           statName="CHA"
+          availablePoints={availablePoints()}
           setStat={setCharCha}
         />
         <div>------------------------------------------------------------</div>

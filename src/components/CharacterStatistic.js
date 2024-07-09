@@ -1,7 +1,7 @@
 import "./CharacterStatistic.scss";
 
 function CharacterStatistic(props) {
-  const { number, statName, setStat } = props;
+  const { number, statName, availablePoints,setStat } = props;
   const strDescriptors = [
     "Feeble",
     "Weak",
@@ -61,6 +61,7 @@ function CharacterStatistic(props) {
 
   const incrementStat = () => {
     const newNumber = number + 1;
+    if ((newNumber > 18) || !availablePoints) return;
     setStat(newNumber);
   };
 
