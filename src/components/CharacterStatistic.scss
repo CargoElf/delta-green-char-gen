@@ -1,0 +1,25 @@
+.stat-row {
+	display: flex;
+	justify-content: flex-start;
+
+	.number {
+		width: 7rem;
+		padding-right: 1rem;
+	}
+
+	.buttons {
+		width: 3rem;
+		padding-right: 3rem;
+
+		button {
+			all: unset;
+			user-select: none;
+		}
+	}
+
+	.percentile {
+		width: 4rem;
+		text-align: right;
+		padding-right: 6rem;
+	}
+}
