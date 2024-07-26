@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/delta-green-char-gen/static/css/main.fcaaa0c3.css",
-    "main.js": "/delta-green-char-gen/static/js/main.6bd317bb.js",
+    "main.css": "/delta-green-char-gen/static/css/main.e98ce2ca.css",
+    "main.js": "/delta-green-char-gen/static/js/main.3c146771.js",
     "static/js/453.8b6f1f11.chunk.js": "/delta-green-char-gen/static/js/453.8b6f1f11.chunk.js",
     "index.html": "/delta-green-char-gen/index.html",
-    "main.fcaaa0c3.css.map": "/delta-green-char-gen/static/css/main.fcaaa0c3.css.map",
-    "main.6bd317bb.js.map": "/delta-green-char-gen/static/js/main.6bd317bb.js.map",
+    "main.e98ce2ca.css.map": "/delta-green-char-gen/static/css/main.e98ce2ca.css.map",
+    "main.3c146771.js.map": "/delta-green-char-gen/static/js/main.3c146771.js.map",
     "453.8b6f1f11.chunk.js.map": "/delta-green-char-gen/static/js/453.8b6f1f11.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fcaaa0c3.css",
-    "static/js/main.6bd317bb.js"
+    "static/css/main.e98ce2ca.css",
+    "static/js/main.3c146771.js"
   ]
 }
