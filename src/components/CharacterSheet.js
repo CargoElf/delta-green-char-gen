@@ -24,10 +24,6 @@ function CharacterSheet() {
 		charCha
   ];
 
-  const [ isEditingName, setIsEditingName ] = useState(true);
-  const [ isEditingAge, setIsEditingAge ] = useState(false);
-	const [ isEditingProfession, setIsEditingProfession ] = useState(false);
-
 	const nameInput = useRef(null);
 	const ageInput = useRef(null);
 	const professionInput = useRef(null);
@@ -53,7 +49,6 @@ function CharacterSheet() {
 						/>
           }
         </span>
-				{/* {isEditingName && <div className={`blinking-block ${nameCaretPosition()}`}>▉</div>} */}
       </div>
     )
   }
@@ -61,7 +56,7 @@ function CharacterSheet() {
   const ageDisplay = () => {
     return (
       <div onClick={() => {ageInput.current.focus()}}>
-        <span onClick={() => { if (!isEditingAge) setIsEditingAge(true) }}>
+        <span>
           AGE: {
             <span>
               <input
@@ -79,7 +74,7 @@ function CharacterSheet() {
   const professionDisplay = () => {
     return (
       <div onClick={() => {professionInput.current.focus()}}>
-        <span onClick={() => { if (!isEditingProfession) setIsEditingProfession(true) }}>
+        <span>
           Profession: {
             <span>
               <input
