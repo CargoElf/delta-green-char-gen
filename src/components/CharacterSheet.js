@@ -1,5 +1,5 @@
 import "./CharacterSheet.scss";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import CharacterStatistic from "./CharacterStatistic";
 
@@ -20,50 +20,55 @@ function CharacterSheet() {
     charCon,
     charDex,
     charInt,
-    charPow
+		charPow,
+		charCha
   ];
 
   const [ isEditingName, setIsEditingName ] = useState(true);
   const [ isEditingAge, setIsEditingAge ] = useState(false);
-  const [ isEditingProfession, setIsEditingProfession ] = useState(false);
+	const [ isEditingProfession, setIsEditingProfession ] = useState(false);
+
+	const nameInput = useRef(null);
+	const ageInput = useRef(null);
+	const professionInput = useRef(null);
+
+	const changeCharAge = (value) => {
+		let newValue = Math.round(value) || '';
+		// oldest verified person in 2000
+		if (newValue > 115) newValue = 115;
+
+		setCharAge(newValue);
+	}
 
   const nameDisplay = () => {
     return (
-      <div>
-        <span onClick={() => { if (!isEditingName) setIsEditingName(true) }}>
+			<div onClick={() => {nameInput.current.focus()}}>
+        <span>
           NAME: {
-            <span>
-              <input
-                autoFocus
-                type="text"
-                size={charName.length || 1}
-                defaultValue={charName}
-                onChange={(e) => setCharName(e.target.value)}
-                onFocus={() => setIsEditingName(true)}
-                onBlur={() => setIsEditingName(false)}
-              />
-              {isEditingName && <span className="blinking-block">▉</span>}
-            </span>
+						<input
+							autoFocus
+							ref={nameInput}
+							defaultValue={charName}
+							onChange={(e) => setCharName(e.target.value)}
+						/>
           }
         </span>
+				{/* {isEditingName && <div className={`blinking-block ${nameCaretPosition()}`}>▉</div>} */}
       </div>
     )
   }
 
   const ageDisplay = () => {
     return (
-      <div>
+      <div onClick={() => {ageInput.current.focus()}}>
         <span onClick={() => { if (!isEditingAge) setIsEditingAge(true) }}>
           AGE: {
             <span>
               <input
-                size={charAge.toString().length || 1}
-                defaultValue={charAge}
-                onChange={(e) => setCharAge(e.target.value)}
-                onFocus={() => setIsEditingAge(true)}
-                onBlur={() => setIsEditingAge(false)}
+								ref={ageInput}
+								value={charAge}
+                onChange={(e) => changeCharAge(e.target.value)}
               />
-              {isEditingAge && <span className="blinking-block">▉</span>}
             </span>
           }
         </span>
@@ -73,18 +78,15 @@ function CharacterSheet() {
 
   const professionDisplay = () => {
     return (
-      <div>
+      <div onClick={() => {professionInput.current.focus()}}>
         <span onClick={() => { if (!isEditingProfession) setIsEditingProfession(true) }}>
           Profession: {
             <span>
               <input
-                size={charProfession.length || 1}
+                ref={professionInput}
                 defaultValue={charProfession}
                 onChange={(e) => setCharProfession(e.target.value)}
-                onFocus={() => setIsEditingProfession(true)}
-                onBlur={() => setIsEditingProfession(false)}
               />
-              {isEditingProfession && <span className="blinking-block">▉</span>}
             </span>
           }
         </span>
@@ -174,7 +176,8 @@ function CharacterSheet() {
     <div className="character-sheet">
       <div className="delta-green-display">
         <div>
-          {String.raw` ____  _____ _   _____  _       ____ ____  _____ _____ _   _
+					{String.raw`
+ ____  _____ _   _____  _       ____ ____  _____ _____ _   _
 |  _ \| ____| | |_   _|/ \     / ___|  _ \| ____| ____| \ | |
 | | | |  _| | |   | | / _ \   | |  _| |_) |  _| |  _| |  \| |
 | |_| | |___| |___| |/ ___ \  | |_| |  _ <| |___| |___| |\  |
