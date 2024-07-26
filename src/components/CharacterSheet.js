@@ -15,7 +15,6 @@ function CharacterSheet() {
   const [ charPow, setCharPow ] = useState(startingStatNumber);
   const [ charCha, setCharCha ] = useState(startingStatNumber);
 
-
   const allCharStats = [
     charStr,
     charCon,
@@ -28,18 +27,6 @@ function CharacterSheet() {
   const [ isEditingAge, setIsEditingAge ] = useState(false);
   const [ isEditingProfession, setIsEditingProfession ] = useState(false);
 
-  const updateName = (e) => {
-    const nameText = e.target.value;
-    setCharName(nameText)
-  };
-
-  const updateAge = (e) => {
-    const age = e.target.value
-    setCharAge(age)
-  }
-
-  const updateProfession = (e) => setCharProfession(e.target.value);
-
   const nameDisplay = () => {
     return (
       <div>
@@ -51,7 +38,7 @@ function CharacterSheet() {
                 type="text"
                 size={charName.length || 1}
                 defaultValue={charName}
-                onChange={(e) => updateName(e)}
+                onChange={(e) => setCharName(e.target.value)}
                 onFocus={() => setIsEditingName(true)}
                 onBlur={() => setIsEditingName(false)}
               />
@@ -70,9 +57,9 @@ function CharacterSheet() {
           AGE: {
             <span>
               <input
-                size={charAge.toString().length}
+                size={charAge.toString().length || 1}
                 defaultValue={charAge}
-                onChange={(e) => updateAge(e)}
+                onChange={(e) => setCharAge(e.target.value)}
                 onFocus={() => setIsEditingAge(true)}
                 onBlur={() => setIsEditingAge(false)}
               />
@@ -93,7 +80,7 @@ function CharacterSheet() {
               <input
                 size={charProfession.length || 1}
                 defaultValue={charProfession}
-                onChange={(e) => updateProfession(e)}
+                onChange={(e) => setCharProfession(e.target.value)}
                 onFocus={() => setIsEditingProfession(true)}
                 onBlur={() => setIsEditingProfession(false)}
               />
