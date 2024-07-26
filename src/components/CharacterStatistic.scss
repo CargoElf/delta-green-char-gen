@@ -3,13 +3,12 @@
 	justify-content: flex-start;
 
 	.number {
-		width: 7rem;
-		padding-right: 1rem;
+		width: 5rem;
 	}
 
 	.buttons {
-		width: 3rem;
-		padding-right: 3rem;
+		width: 2rem;
+		padding-right: 2rem;
 
 		button {
 			all: unset;
@@ -18,8 +17,7 @@
 	}
 
 	.percentile {
-		width: 4rem;
-		text-align: right;
-		padding-right: 6rem;
+		width: 3rem;
+		padding-right: 2rem;
 	}
 }

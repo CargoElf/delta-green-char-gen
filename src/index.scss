@@ -5,12 +5,17 @@ html {
   margin: 0;
   height: 100%;
   width: 100%;
+	font-size: 8px;
+
+	@media (min-width: 430px) {font-size: 10px;}
+	@media (min-width: 670px) {font-size: 16px;}
+	@media (min-width: 1005px) {font-size: 24px;}
 }
 
 body {
   margin: 0;
   font-family: monospace;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: $green-phosphor;
   text-shadow: 0 0 .2rem rgba($green-phosphor, .8);
   min-height: 100%;

@@ -94,12 +94,14 @@ function CharacterSheet() {
     )
 
     return 72 - valuesSum;
-  }
+	}
+
+	const dashes = '----------------------------------------------------';
 
   const displayStats = () => {
     return (
-      <div>
-        <div>------------------------------------------------------------</div>
+			<div>
+				<div>{dashes}</div>
         <div>STATISTICS</div>
         <div>AVAILABLE POINTS: {availablePoints()}</div>
         <br />
@@ -138,9 +140,8 @@ function CharacterSheet() {
           statName="CHA"
           availablePoints={availablePoints()}
           setStat={setCharCha}
-        />
-        <div>------------------------------------------------------------</div>
-      </div>
+				/>
+			</div>
     )
   };
 
@@ -161,7 +162,10 @@ function CharacterSheet() {
     ].map((attrString) => <div key={attrString.slice(0, 2)}>{attrString}</div>);
 
     return (
-      <div>
+			<div>
+				<div>{dashes}</div>
+				<div>DERIVED STATS</div>
+				<br />
         {attrs}
       </div>
     )
@@ -172,27 +176,25 @@ function CharacterSheet() {
       <div className="delta-green-display">
         <div>
 					{String.raw`
- ____  _____ _   _____  _       ____ ____  _____ _____ _   _
-|  _ \| ____| | |_   _|/ \     / ___|  _ \| ____| ____| \ | |
-| | | |  _| | |   | | / _ \   | |  _| |_) |  _| |  _| |  \| |
-| |_| | |___| |___| |/ ___ \  | |_| |  _ <| |___| |___| |\  |
-|____/|_____|_____|_/_/   \_\  \____|_| \_\_____|_____|_| \_|`}
+ ____      _ _       _____
+|    \ ___| | |_ ___|   __|___ ___ ___ ___
+|  |  | -_| |  _| .'|  |  |  _| -_| -_|   |
+|____/|___|_|_| |__,|_____|_| |___|___|_|_|`}
         </div>
         <div>
           {String.raw`
- _____             _      _____              _         _
-|  _  |___ ___ ___| |_   |_   ____ ___ _____|_|___ ___| |
-|     | . | -_|   |  _|    | || -_|  _|     | |   | .'| |
-|__|__|_  |___|_|_|_|      |_||___|_| |_|_|_|_|_|_|__,|_|
-      |___|
-
+ _____             _      _____                 _
+|  _  |___ ___ ___| |_   | __  |___ ___ ___ ___| |_
+|     | . | -_|   |  _|  |    -| -_| . | . |  _|  _|
+|__|__|_  |___|_|_|_|    |__|__|___|  _|___|_| |_|
+      |___|                        |_|
 `}
         </div>
       </div>
       {nameDisplay()}
       {ageDisplay()}
       {professionDisplay()}
-      {displayStats()}
+			{displayStats()}
       {derivedAttrs()}
     </div>
   );
