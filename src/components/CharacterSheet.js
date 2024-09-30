@@ -145,7 +145,7 @@ function CharacterSheet() {
     )
   };
 
-  const hitPoints = () => `HP : ${charCon + charStr}`;
+  const hitPoints = () => `HP : ${Math.ceil((charCon + charStr) / 2)}`;
 
   const willPower = () => `WP : ${charPow}`;
 

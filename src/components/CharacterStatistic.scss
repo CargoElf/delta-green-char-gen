@@ -1,13 +1,14 @@
 .stat-row {
 	display: flex;
 	justify-content: flex-start;
+	white-space: nowrap;
 
 	.number {
 		width: 5rem;
 	}
 
 	.buttons {
-		width: 2rem;
+		width: 4rem;
 		padding-right: 2rem;
 
 		button {
